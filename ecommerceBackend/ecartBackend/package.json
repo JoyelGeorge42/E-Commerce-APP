@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cloudinary": "^1.37.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.2.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.2",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "socket.io": "^4.7.2",
+    "validator": "^13.9.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "ecartbackend",
+  "version": "1.0.0",
+  "description": "a backend for ecart",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC"
+}
