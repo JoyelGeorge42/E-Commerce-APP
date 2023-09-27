@@ -1,13 +1,16 @@
 import {
   HttpClient,
+  HttpErrorResponse,
+  HttpEvent,
   HttpEventType,
   HttpHeaders,
   HttpParams,
   HttpRequest,
+  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { catchError, filter } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
+import { catchError, filter, map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import * as _ from 'lodash';
 import { SingletonService } from './singleton.service';

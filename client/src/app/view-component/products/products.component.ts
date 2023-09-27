@@ -3,6 +3,7 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
+  ElementRef,
   OnInit,
   TemplateRef,
   ViewChild,
@@ -16,13 +17,14 @@ import {
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { MatDialogRef } from '@angular/material/dialog';
 import {
+  MatSelectionList,
   MatSelectionListChange,
 } from '@angular/material/list';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatRadioChange } from '@angular/material/radio';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { debounceTime, take, takeLast } from 'rxjs/operators';
 import { HttpclientService } from 'src/app/services/httpclient.service';
 import { SingletonService } from 'src/app/services/singleton.service';
@@ -47,7 +49,8 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     private route: Router,
     private ss: SingletonService,
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<DialogComponent>
+    private dialogRef: MatDialogRef<DialogComponent>,
+    private cdRef: ChangeDetectorRef
   ) {}
   displayedColumns: Array<string> = [
     'serial_no',
