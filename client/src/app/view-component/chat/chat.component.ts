@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { SocketService } from 'src/app/services/socket.service';
 import { UserService } from 'src/app/services/user.service';
 import { ISocketMessage, ISocketReturnMsg } from 'src/app/typing/interfaces';
-import { DatePipe } from '@angular/common';
 import { HttpclientService } from 'src/app/services/httpclient.service';
 import { debounceTime } from 'rxjs';
 @Component({
@@ -24,7 +23,7 @@ export class ChatComponent implements OnInit {
     private socket: SocketService,
     private http: HttpclientService
   ) {
-    this.chatFormGroup = fb.group({
+    this.chatFormGroup = this.fb.group({
       input: '',
     });
     this.socket.WebSocketMsgSubject.subscribe((data) => {

@@ -10,7 +10,6 @@ import {
   DialogData,
   IForgotPaassword,
   IUserLogin,
-  IUserRegistration,
 } from 'src/app/typing/interfaces';
 
 @Component({
