@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SingletonService } from 'src/app/services/singleton.service';
-import { SubSink } from 'subsink';
+
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',

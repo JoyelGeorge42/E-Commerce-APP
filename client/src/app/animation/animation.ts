@@ -3,9 +3,7 @@ import {
   state,
   style,
   transition,
-  animate,
-  query,
-  stagger,
+  animate
 } from '@angular/animations';
 
 export const fadeSlideInOut = trigger('fadeSlideInOut', [

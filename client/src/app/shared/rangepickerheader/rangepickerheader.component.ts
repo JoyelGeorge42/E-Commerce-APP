@@ -1,10 +1,8 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   HostBinding,
   HostListener,
   QueryList,
-  Renderer2,
   ViewChildren,
 } from '@angular/core';
 import { DateAdapter } from '@angular/material/core';

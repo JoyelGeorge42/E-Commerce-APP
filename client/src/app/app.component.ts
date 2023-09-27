@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SingletonService } from './services/singleton.service';
-import { HttpclientService } from './services/httpclient.service';
 import { UserService } from './services/user.service';
 import { StatusMessageComponent } from './shared/statusMessage/status-message.component';
 import { SubSink } from 'subsink';
@@ -32,7 +31,7 @@ export class AppComponent
     private ss: SingletonService,
     private user: UserService,
     private route: Router,
-    private socket: SocketService,
+    // private socket: SocketService,
     private cdRef: ChangeDetectorRef
   ) {}
   ngAfterContentChecked(): void {

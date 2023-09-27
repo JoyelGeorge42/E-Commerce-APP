@@ -1,8 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { debounce } from 'lodash';
-import { debounceTime } from 'rxjs/operators';
 import { HttpclientService } from 'src/app/services/httpclient.service';
 import { SingletonService } from 'src/app/services/singleton.service';
 import { UserService } from 'src/app/services/user.service';

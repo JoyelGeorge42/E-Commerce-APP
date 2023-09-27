@@ -8,14 +8,12 @@ import {
 import { Observable, delay, finalize } from 'rxjs';
 import { SingletonService } from './singleton.service';
 import { UserService } from './user.service';
-import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(
     private ss: SingletonService,
     private user: UserService,
-    private cookie: CookieService
   ) {}
 
   intercept(

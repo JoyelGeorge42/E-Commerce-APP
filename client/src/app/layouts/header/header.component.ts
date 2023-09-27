@@ -1,12 +1,9 @@
 import {
-  ChangeDetectorRef,
   Component,
   EventEmitter,
   OnInit,
   Output,
 } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpclientService } from 'src/app/services/httpclient.service';
 import { SingletonService } from 'src/app/services/singleton.service';
 import { UserService } from 'src/app/services/user.service';
 import { SubSink } from 'subsink';
@@ -23,8 +20,6 @@ export class HeaderComponent implements OnInit {
   constructor(
     private user: UserService,
     private ss: SingletonService,
-    private http: HttpclientService,
-    private cdr: ChangeDetectorRef
   ) {}
   isLogin: boolean = false;
   ngOnInit(): void {

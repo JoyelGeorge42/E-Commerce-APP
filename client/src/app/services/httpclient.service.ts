@@ -1,19 +1,16 @@
 import {
   HttpClient,
-  HttpErrorResponse,
-  HttpEvent,
   HttpEventType,
   HttpHeaders,
   HttpParams,
   HttpRequest,
-  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
 import { catchError, filter, map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import * as _ from 'lodash';
-import { SingletonService } from './singleton.service';
+
 export interface AuthResponceData {
   idToken: string;
   email: string;
@@ -55,7 +52,7 @@ export class HttpclientService {
 
   // sending the post request for login
 
-  constructor(private http: HttpClient, private ss: SingletonService) {}
+  constructor(private http: HttpClient) {}
 
   // sending the get request to fetch the data
 

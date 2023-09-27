@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 import { HttpclientService } from 'src/app/services/httpclient.service';
 import { SingletonService } from 'src/app/services/singleton.service';
 import { UserService } from 'src/app/services/user.service';
@@ -10,7 +9,6 @@ import {
   DialogData,
   IForgotPaassword,
   IUserLogin,
-  IUserRegistration,
 } from 'src/app/typing/interfaces';
 
 @Component({
@@ -34,7 +32,6 @@ export class LogintempComponent implements OnInit {
     private httpClient: HttpclientService,
     private user: UserService,
     private ss: SingletonService,
-    private cookie: CookieService,
     public dilogRef: MatDialogRef<any>,
     private route: Router,
     @Inject(MAT_DIALOG_DATA) public data: DialogData

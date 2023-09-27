@@ -1,6 +1,5 @@
 import {
   AfterContentChecked,
-  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   OnDestroy,
@@ -10,10 +9,9 @@ import { expandCollapse, rotateToggle } from 'src/app/animation/animation';
 import { menuInterface } from 'src/app/typing/interfaces';
 import { SingletonService } from 'src/app/services/singleton.service';
 import { messageTypeEnum } from 'src/app/typing/enum';
-import { menuBar } from 'src/app/typing/constant';
 import { UserService } from 'src/app/services/user.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, debounceTime, first } from 'rxjs';
+import { debounceTime } from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Component({

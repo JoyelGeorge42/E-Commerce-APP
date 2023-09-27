@@ -5,12 +5,10 @@ import {
   ApexChart,
   ChartComponent,
   ApexPlotOptions,
-  ApexFill,
-  ApexStroke,
 } from 'ng-apexcharts';
 import { HttpclientService } from 'src/app/services/httpclient.service';
 import { SingletonService } from 'src/app/services/singleton.service';
-import { IAnaliticsData, IOrdersStatics } from 'src/app/typing/orders';
+import { IOrdersStatics } from 'src/app/typing/orders';
 import { Chart, registerables } from 'chart.js';
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
