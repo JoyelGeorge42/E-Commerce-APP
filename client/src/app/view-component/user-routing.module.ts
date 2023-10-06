@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './category/category.component';
 import { ItemlistComponent } from './itemlist/itemlist.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 const routes: Routes = [
   {
@@ -64,7 +65,7 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: ItemlistComponent,
+    component: AddToCartComponent,
   },
   {
     path: 'wishlist',
@@ -74,7 +75,6 @@ const routes: Routes = [
     path: 'notification',
     component: ItemlistComponent,
   },
-
   {
     path: '',
     redirectTo: 'category',

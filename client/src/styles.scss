@@ -118,10 +118,10 @@ body {
 //this class is pannel class
 .reset-panel {
   .mat-dialog-container {
-    padding: 10px !important;
-    max-width: 430px;
+    padding: 20px 15px !important;
+    max-width: 350px;
     background: #ffffff;
-    border-radius: 15px;
+    border-radius: 12px;
   }
 }
 //custonm input class
@@ -129,10 +129,11 @@ body {
   input {
     height: 40px;
     outline: none;
-    min-width: 180px;
     padding: 0 8px 0 8px;
     border: 2px solid #212121;
     border-radius: 3px;
+    max-width: 290px;
+    width: 285px;
   }
   textarea {
     outline: none;

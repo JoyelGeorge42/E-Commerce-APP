@@ -1,7 +1,7 @@
 import {
+  AfterContentChecked,
   Component,
   EventEmitter,
-  OnInit,
   Output,
 } from '@angular/core';
 import { SingletonService } from 'src/app/services/singleton.service';
@@ -13,7 +13,7 @@ import { SubSink } from 'subsink';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements  AfterContentChecked{
   @Output() toggleSideBar: EventEmitter<any> = new EventEmitter();
   private subs = new SubSink();
 
@@ -22,13 +22,13 @@ export class HeaderComponent implements OnInit {
     private ss: SingletonService,
   ) {}
   isLogin: boolean = false;
-  ngOnInit(): void {
-    this.subs.sink = this.ss.isLogin$.subscribe((result) => {
-      this.isLogin = result;
-      console.log('this.isLogin', this.isLogin);
-    });
-  }
 
+  ngAfterContentChecked(): void {
+    this.subs.sink = this.ss.isLogin$.subscribe((result) => {
+    this.isLogin = result;
+    console.log('this.isLogin', this.isLogin);
+  });
+}
   toggleSidebar() {
     this.toggleSideBar.emit();
   }

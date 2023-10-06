@@ -18,10 +18,15 @@
 .password-container button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 5%;
   height: 100%;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+
+.login-form{
+  min-width: 200px;
 }

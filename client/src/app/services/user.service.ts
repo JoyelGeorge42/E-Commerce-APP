@@ -18,12 +18,15 @@ export class UserService {
   setItem(key: string, value: string) {
     localStorage.setItem(key, value);
   }
+
   removeItem(key: string) {
     localStorage.removeItem(key);
   }
+
   getItem(key: string) {
     return localStorage.getItem(key);
   }
+
   getToken() {
     return this.getItem('token');
   }
@@ -31,6 +34,7 @@ export class UserService {
   getUserName(): string {
     return this.decodeToken()?.['name'];
   }
+
   decodeToken() {
     const token: any = this.getToken();
     if (token) {
@@ -41,7 +45,8 @@ export class UserService {
   }
 
   getUserRole(): string {
-    return this.decodeToken()?.['role'];
+    let role = this.decodeToken()?.['role'];
+    return !role ? 'user' : role;
   }
 
   userLogout() {

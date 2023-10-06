@@ -25,4 +25,10 @@
 @include theme-class($warn, '.col-', 'color','warn');
 @include theme-class($theme_bg, '.col-', 'color','theme_bg');
 //generate font-weight
-@include fontweight('font-weight','fw-',100,10)
+@include fontweight('font-weight','fw-',100,10);
+
+@include width('width','w-', 1 , 10 ,'%');
+@include align('right','rt-', 1 , 100 ,'%');
+@include align('left','lt-', 1 , 100 ,'%');
+@include align('top','tp-', 1 , 100 ,'%');
+@include align('bottom','bt-', 1 , 100 ,'%');

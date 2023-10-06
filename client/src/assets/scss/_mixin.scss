@@ -50,3 +50,21 @@
         };
     };
 };
+
+//mixin for width generation for every 10%
+@mixin width($attr, $prefix, $step, $range, $unit) {
+    @for $i from 1 through $range {
+      $value: $i * 10; 
+      .#{$prefix}#{$value} {
+        #{$attr}: #{$value}#{$unit};
+      }
+    }
+}
+
+@mixin align($attr, $prefix, $step, $range, $unit) {
+    @for $i from $step through $range {
+        .#{$prefix}#{$i}{
+            #{$attr}:#{$i}#{$unit};
+        }
+    }
+}

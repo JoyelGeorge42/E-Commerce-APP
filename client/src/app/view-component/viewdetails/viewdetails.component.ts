@@ -12,12 +12,22 @@ import { messageTypeEnum } from 'src/app/typing/enum';
 export class ViewdetailsComponent implements OnInit {
   viewObject: any;
   currentRoute: string;
+
+  get activeRole(): string {
+    return this.user.getUserRole();
+  }
+
+  get routePrefix(): string {
+    return this.activeRole;
+  }
+
   constructor(
     private ss: SingletonService,
     public location: Location,
     private router: Router,
     private user: UserService
   ) {
+
     this.viewObject =
       this.router.getCurrentNavigation().extras?.state?.['data'];
     this.currentRoute =
@@ -39,17 +49,17 @@ export class ViewdetailsComponent implements OnInit {
   }
 
   addToCartBtn() {
-    const token = this.user.getToken();
-    if (!token) {
+    if (this.user.getToken()) {
+      const item = this.viewObject;
+      this.router.navigate([this.routePrefix + '/' + 'cart'], { state: { data: item } });
+    } else {
       this.ss
         .ConfirmMessage(
           'Information',
           `Please login to access the page`,
           messageTypeEnum.WARN
         )
-        .subscribe((res) => {});
-    } else {
-      return;
+        .subscribe((res) => { });
     }
   }
 
@@ -62,7 +72,7 @@ export class ViewdetailsComponent implements OnInit {
           `Please login to access the page`,
           messageTypeEnum.WARN
         )
-        .subscribe((res) => {});
+        .subscribe((res) => { });
     } else {
       return;
     }
@@ -77,7 +87,7 @@ export class ViewdetailsComponent implements OnInit {
           `Please login to access the page`,
           messageTypeEnum.WARN
         )
-        .subscribe((res) => {});
+        .subscribe((res) => { });
     } else {
       return;
     }

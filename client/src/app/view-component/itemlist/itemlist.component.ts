@@ -42,13 +42,13 @@ export class ItemlistComponent implements OnInit, OnDestroy {
   }
 
   get activeRole(): string {
-    let role = this.user.getItem('role');
-    return !role ? 'user' : role;
+    return this.user.getUserRole();
   }
 
   get routePrefix(): string {
     return this.activeRole;
   }
+
   private subs = new SubSink();
   ngOnInit(): void {}
   async fetchItemList(target: string) {
@@ -94,8 +94,10 @@ export class ItemlistComponent implements OnInit, OnDestroy {
   }
 
   showProduct(item: any) {
+    console.log(item);
+    
     this.router.navigateByUrl(this.routePrefix + '/' + 'view-details', {
-      state: { data: item, route: this.target },
+      state: { data: item,  route: this.target },
     });
   }
   findLable(): string {
